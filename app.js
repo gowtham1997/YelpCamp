@@ -19,11 +19,13 @@ var commentRoutes    = require('./routes/comments.js'),
  
  
 app.set('view engine', 'ejs');
-mongoose.connect("mongodb://localhost/yelp_camp");
+// mongodb://<dbuser>:<dbpassword>@ds043220.mlab.com:43220/yelpcamp
+// mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://shyam:shyam@ds043220.mlab.com:43220/yelpcamp");
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(express.static(__dirname+"/public"));
+app.use(express.static(__dirname+"/public"));   
 app.use(methodOverride("_method"));
 app.use(flash());
  //seedDB();   // seed the dataBase   
