@@ -21,7 +21,9 @@ var commentRoutes    = require('./routes/comments.js'),
 app.set('view engine', 'ejs');
 // mongodb://<dbuser>:<dbpassword>@ds043220.mlab.com:43220/yelpcamp
 // mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://shyam:shyam@ds043220.mlab.com:43220/yelpcamp");
+// mongoose.connect("mongodb://shyam:shyam@ds043220.mlab.com:43220/yelpcamp");
+console.log(process.env.DATABASEURL);
+mongoose.connect(process.env.DATABASEURL);
 app.use(bodyParser.urlencoded({
     extended: true
 }));
